@@ -3,7 +3,6 @@ import { Repository } from 'typeorm';
 import { Entrada } from './entrada.entity';
 import { EntradaCadastrarDto } from "./dto/entrada.cadastrar.dto";
 import { ResultadoDto } from "src/dto/resultado.dto";
-//import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class EntradaService {
@@ -22,7 +21,7 @@ export class EntradaService {
         entrada.horario = data.horario
         entrada.sistolica = data.sistolica
         entrada.diastolica = data.diastolica
-    //    usuario.password = bcrypt.hashSync(data.senha, 8)
+
         return this.entradaRepository.save(entrada)
         .then((result) => {
             return <ResultadoDto>{
@@ -37,8 +36,4 @@ export class EntradaService {
             }
         })
     }
-
-    //async findOne(email: string): Promise<Usuario | null> {
-    //    return this.usuarioRepository.findOneBy({email: email});
-    //}
 }
