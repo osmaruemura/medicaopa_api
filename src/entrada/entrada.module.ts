@@ -11,6 +11,7 @@ import { EntradaController } from './entrada.controller';
         ...entradaProviders,
         EntradaService,
     ],
-    //exports: [EntradaService]
+    exports: [EntradaService]
 })
+
 export class EntradaModule {}
